@@ -2,7 +2,7 @@
 
 //implements hook_schema() 
 
-function custom_install() {
+function custom_schema() {
 
 $schema['custom'] = array(
     
