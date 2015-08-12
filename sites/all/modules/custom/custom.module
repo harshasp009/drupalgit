@@ -1,0 +1,37 @@
+<?php
+
+//implement hook_menu()
+
+function custom_menu() {
+$items = array();
+
+$items['mycustom']=array(
+'title'=>'MyCustom',
+'page callback'=>'mycustom_form',
+'access callback' => TRUE,
+'type' => 'MENU_NORMAL_ITEM',
+
+
+
+);
+
+
+return $items;
+}
+
+function mycustom_form() {
+
+return drupal_get_form('mycustom_form_form1');
+
+}
+
+function mycustom_form_form1($form, &$form_state) {
+
+$form['simple_text']=array(
+'#markup' => 'This is testing text for git test',
+
+);
+
+return $form;
+}
+
