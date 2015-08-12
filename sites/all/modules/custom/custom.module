@@ -32,6 +32,11 @@ $form['simple_text']=array(
 
 );
 
+$form['testing_text']=array(
+'#markup' => 'This is testing script of second line',
+
+);
+
 return $form;
 }
 
