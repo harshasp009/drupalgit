@@ -1,4 +1,4 @@
-name=Custom
-description=custom git test custom
-core=7.x
-
+name = custom
+description = custom module
+core = 7.x
+version = 7.x-1.x

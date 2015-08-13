@@ -8,8 +8,9 @@ $items = array();
 $items['mycustom']=array(
 'title'=>'MyCustom',
 'page callback'=>'mycustom_form',
-'access callback' => TRUE,
-'type' => 'MENU_NORMAL_ITEM',
+'page arguments' => array('mycustom_form'),
+'access arguments' => array('administer mycustom_form'),
+ 'type' => MENU_NORMAL_ITEM,
 
 
 
@@ -28,19 +29,19 @@ return drupal_get_form('mycustom_form_form1');
 function mycustom_form_form1($form, &$form_state) {
 
 $form['simple_text']=array(
-'#markup' => 'This is testing text for git test',
+'#markup' => 'The page is not found',
 
 );
 
-$form['testing_text']=array(
-'#markup' => 'This is testing script of second test line',
+$argval=arg(0);
+if($argval=='mycustom'){
 
-);
+$nid=db_insert('custom')
+  ->fields(array('name' => $argval))
+  ->execute();
 
-$form['testing1_text']=array(
-'#markup' => 'This is testing script of third test line',
 
-);
+}
 
 return $form;
 }

@@ -5,8 +5,7 @@
 function custom_schema() {
 
 $schema['custom'] = array(
-    
-description' => t('custom tables'),
+
     'fields' => array(
       'nid' =>  array(
         'description' => 'The primary identifier',
@@ -26,7 +25,7 @@ description' => t('custom tables'),
    
 
     ),
-        primary =array('nid'),
+        'primary key' => array('nid'),
  
   );
 
